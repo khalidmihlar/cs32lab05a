@@ -99,9 +99,8 @@ std::string WordCount::makeValidWord(std::string word) {
 			}
 		}
 		else{
-				if ((word[i] == '\'' || word[i]== '-') && isWordChar(word[i-1]) && isWordChar(word[i+1])){
-					bruh+=word[i];
-				}
+			if ((word[i] == '\'' || word[i]== '-') && isWordChar(word[i-1]) && isWordChar(word[i+1])){
+				bruh+=word[i];
 			}
 		}
 	}
