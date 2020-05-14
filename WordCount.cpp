@@ -99,7 +99,6 @@ std::string WordCount::makeValidWord(std::string word) {
 			}
 		}
 		else{
-			if (i>1){
 				if ((word[i] == '\'' || word[i]== '-') && isWordChar(word[i-1]) && isWordChar(word[i+1])){
 					bruh+=word[i];
 				}
@@ -122,7 +121,7 @@ void WordCount::dumpWordsSortedByWord(std::ostream &out) const {
 	while (sort==false){
 		sort = true;
 		for (size_t i=0; i<temp.size()-1; i++){
-			if (temp[i].first > temp[i+1].first){
+			if (temp[i].first < temp[i+1].first){
 				other.push_back(temp[i]);
 				temp[i] = temp[i+1];
 				temp[i+1] = other[0];
