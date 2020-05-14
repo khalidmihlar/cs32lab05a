@@ -175,14 +175,17 @@ void WordCount::dumpWordsSortedByOccurence(std::ostream &out) const {
 
 void WordCount::addAllWords(std::string text) {
 	string bruh;
-	int temp;
 	for (size_t i=0; i<text.size(); i++){
-		if ((bruh[i] == ' ' || bruh[i] == '\n' || bruh[i] == '\t') && bruh!=""){
+		if ((text[i] == ' ' || text[i] == '\n' || text[i] == '\t') && bruh!=""){
 			incrWordCount(bruh);
+			bruh="";
 		}
 		else{
-			bruh+=1;
+			bruh+=text[i];
 		}
+	}
+	if (bruh!=""){
+		incrWordCount(bruh);
 	}
 	return;
 }
